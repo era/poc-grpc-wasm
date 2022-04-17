@@ -1,0 +1,23 @@
+[package]
+name = "grpc-wasm-client"
+version = "0.1.0"
+edition = "2021"
+
+[lib]
+crate-type = ["cdylib", "rlib"]
+
+[features]
+#default = ["console_error_panic_hook"]
+
+[dependencies]
+console_error_panic_hook = "0.1.7"
+wasm-bindgen = "0.2.63"
+wasm-bindgen-futures="0.4"
+#tonic = "0.7"
+prost = "0.10"
+yew = "0.19" # TODO remove this, only for testing the client, should really just export the bidings
+reqwest = { version = "0.11" }
+web-sys = "0"
+
+[build-dependencies]
+rust-grpc-web = { git = "https://github.com/elliptic-email/rust-grpc-web" }

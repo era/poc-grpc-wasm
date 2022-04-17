@@ -1,0 +1,28 @@
+[package]
+name = "grpc-wasm-server"
+version = "0.1.0"
+edition = "2021"
+
+[[bin]] # Bin to run the HelloWorld gRPC server
+name = "helloworld-server"
+path = "src/server.rs"
+
+
+[lib]
+crate-type = ["cdylib", "rlib"]
+
+[features]
+# default = ["console_error_panic_hook"]
+
+[dependencies]
+wasm-bindgen = "0.2.63"
+tonic = "0.7"
+prost = "0.10"
+tokio = { version = "1.0", features = ["macros", "rt-multi-thread"] }
+
+reqwest = { version = "0.11" }
+web-sys = "0"
+
+[build-dependencies]
+#rust-grpc-web = { git = "https://github.com/elliptic-email/rust-grpc-web" }
+tonic-build = "0.7"

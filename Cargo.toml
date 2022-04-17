@@ -1,0 +1,7 @@
+[workspace]
+default-members = ["grpc-wasm-client"]
+members = [
+    "grpc-wasm-server",
+    "grpc-wasm-client",
+    "xtask",
+]
